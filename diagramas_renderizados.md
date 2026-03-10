@@ -1,6 +1,5 @@
 # Diagramas Renderizados
 
-Depois que a workflow `Render PlantUML` rodar no GitHub, os SVGs gerados poderao ser visualizados aqui.
 
 ## Casos de uso
 
