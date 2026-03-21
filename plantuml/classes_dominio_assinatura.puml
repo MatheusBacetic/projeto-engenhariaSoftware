@@ -1,0 +1,50 @@
+@startuml
+title Diagrama de Classes do Dominio Principal do Site de Assinatura
+
+skinparam classAttributeIconSize 0
+hide empty methods
+
+class Usuario {
+  id : UUID
+  nome : string
+  email : string
+  primeiroAcessoPendente : boolean
+}
+
+class ContaEmpresa {
+  id : UUID
+  nomeConta : string
+  tipoPessoa : string
+  statusPagamento : string
+  statusConta : string
+}
+
+class Assinatura {
+  id : UUID
+  plano : string
+  status : string
+  dataRenovacao : date
+  gatewayPagamento : string
+  stripeCustomerId : string
+}
+
+class IntegracaoPagamento {
+  id : integer
+  provider : string
+  status : string
+  token : string
+}
+
+class TokenRedefinicao {
+  id : UUID
+  token : string
+  expiracao : datetime
+  usado : boolean
+}
+
+Usuario "1" -- "1" ContaEmpresa : pertence a
+ContaEmpresa "1" -- "1" Assinatura : possui
+ContaEmpresa "1" -- "0..*" IntegracaoPagamento : mantem
+Usuario "1" -- "0..1" TokenRedefinicao : recebe
+
+@enduml

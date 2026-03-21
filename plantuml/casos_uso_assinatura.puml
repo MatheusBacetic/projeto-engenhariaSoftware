@@ -1,0 +1,31 @@
+@startuml
+title Diagrama de Casos de Uso do Site de Assinatura
+
+left to right direction
+
+actor Visitante
+actor Cliente
+
+rectangle "Sistema de Assinatura do EvoPG" {
+  usecase "Conhecer\nproduto" as UC1
+  usecase "Assinar\nplano" as UC2
+  usecase "Aceitar termos\nde uso" as UC3
+  usecase "Autenticar\nusuario" as UC4
+  usecase "Gerenciar\nconta" as UC5
+  usecase "Atualizar ficha\nfiscal" as UC6
+  usecase "Gerenciar\nassinatura" as UC7
+  usecase "Conectar\nMercado Pago" as UC8
+}
+
+Visitante --> UC1
+Visitante --> UC2
+
+Cliente --> UC4
+Cliente --> UC5
+Cliente --> UC7
+Cliente --> UC8
+
+UC2 .> UC3 : <<include>>
+UC5 .> UC6 : <<include>>
+
+@enduml

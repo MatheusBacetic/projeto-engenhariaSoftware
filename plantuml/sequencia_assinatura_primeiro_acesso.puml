@@ -1,0 +1,30 @@
+@startuml
+title Diagrama de Sequencia do Fluxo Principal de Contratacao e Primeiro Acesso
+
+hide footbox
+
+actor Visitante
+participant Tela as "Tela"
+participant Controlador as "Controlador"
+participant Stripe as "Stripe"
+participant Auth as "Auth"
+
+Visitante -> Tela : solicitarAssinatura(plano)
+Tela --> Visitante : exibirTermosUso()
+
+Visitante -> Tela : confirmarAceite()
+Tela -> Controlador : iniciarAssinatura(plano)
+Controlador -> Stripe : criarCheckout(dados)
+Stripe --> Tela : checkoutUrl
+Tela --> Visitante : redirecionarCheckout()
+
+alt pagamento aprovado
+  Stripe -> Controlador : confirmarPagamento(webhook)
+  Controlador -> Auth : criarContaCliente()
+  Controlador -> Auth : enviarLinkRedefinicao(email)
+  Controlador --> Tela : informarPrimeiroAcesso()
+else pagamento recusado ou cancelado
+  Controlador --> Tela : informarFalhaPagamento()
+end
+
+@enduml
