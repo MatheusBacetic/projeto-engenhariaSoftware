@@ -1,0 +1,33 @@
+name: Deploy Faculdade no GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'evopg/faculdade/**'
+      - 'scripts/audit-vendas.js'
+  workflow_dispatch:
+
+jobs:
+  audit_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Correr Auditoria de Vendas
+        run: node scripts/audit-vendas.js
+
+      - name: Deploy para GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./evopg/faculdade
+          publish_branch: gh-pages
