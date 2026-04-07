@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@600..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <!-- Stripe JS SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
 
 </head>
 
@@ -21,11 +23,11 @@
 
 
 
-    <header class="hero hero-no-image">
+    <header class="hero hero-no-image" data-scroll-reveal="headline">
         <div class="container hero-shell">
             <div class="hero-nav">
                 <a href="index.html" class="hero-brand" aria-label="EvoPG">
-                    <img src="../img/logo_semFundo.png" alt="EvoPG" class="hero-brand-logo">
+                    <img src="./img/logo_semFundo.png" alt="EvoPG" class="hero-brand-logo">
                 </a>
                 <div class="top-auth-actions">
                     <a href="perfil.html" class="top-auth-btn top-login-btn"><i class="material-icons" aria-hidden="true">login</i><span>Login</span></a>
@@ -45,17 +47,17 @@
                 <aside class="hero-visual" aria-hidden="true">
                     <span class="hero-visual-glow"></span>
                     <figure class="hero-visual-main">
-                        <video autoplay muted loop playsinline preload="metadata" poster="../img/relatorios.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/relatorios.png">
                             <source src="video/relatorios.mp4" type="video/mp4">
                         </video>
                     </figure>
                     <figure class="hero-visual-badge hero-visual-badge-top">
-                        <video autoplay muted loop playsinline preload="metadata" poster="../img/financeiro1.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/financeiro1.png">
                             <source src="video/financeiro.mp4" type="video/mp4">
                         </video>
                     </figure>
                     <figure class="hero-visual-badge hero-visual-badge-bottom">
-                        <video autoplay muted loop playsinline preload="metadata" poster="../img/kanban.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/kanban.png">
                             <source src="video/escuro.mp4" type="video/mp4">
                         </video>
                     </figure>
@@ -64,7 +66,7 @@
         </div>
     </header>
 
-    <section class="strategic-pillars">
+    <section class="strategic-pillars" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -116,7 +118,7 @@
 
 
 
-    <section class="features">
+    <section class="features" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -178,7 +180,7 @@
 
     </section>
 
-    <section class="audience">
+    <section class="audience" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -238,7 +240,7 @@
 
     </section>
 
-    <section id="planos">
+    <section id="planos" class="pricing" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -390,7 +392,7 @@
 
                     <article class="premium-integration-card premium-integration-card-centered" aria-label="Integração com Mercado Pago">
                         <div class="premium-integration-media">
-                            <img src="../img/mp.png" alt="Logo do Mercado Pago" class="premium-integration-logo">
+                            <img src="./img/mp.png" alt="Logo do Mercado Pago" class="premium-integration-logo">
                         </div>
                         <div class="premium-integration-copy">
                             <span class="premium-integration-kicker">Integração de pagamento</span>
@@ -408,7 +410,7 @@
 
     </section>
 
-    <section class="demo">
+    <section class="demo" data-scroll-reveal="panel">
 
         <div class="container">
 
@@ -482,7 +484,7 @@
 
 
 
-    <section class="how-it-works">
+    <section class="how-it-works" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -544,7 +546,7 @@
 
 
 
-    <section class="security">
+    <section class="security" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -613,7 +615,7 @@
     </section>
 
     
-    <section id="faq-section" class="faq">
+    <section id="faq-section" class="faq" data-scroll-reveal="panel">
 
         <div class="container">
 
@@ -683,7 +685,7 @@
 
 
 
-    <section class="final-cta">
+    <section class="final-cta" data-scroll-reveal="lift">
 
         <div class="container">
 
@@ -863,6 +865,23 @@
 
 
 
+    <!-- Checkout Config & Logic -->
+    <script>
+      window.EVOPG_CHECKOUT_CONFIG = {
+        functionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/criar-checkout",
+        supportFunctionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/enviar-suporte",
+        supabaseUrl: "https://iihqakwfqlkpsutnfpvq.supabase.co",
+        anonKey: "sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt",
+        stripePublishableKey: "pk_live_51SqZZNRPqGu5XMbBSPeyN7MeakOdBZef6HRdNDSl2rFGnX0jj7FcWTThcFNRJtUMK4Yes1TjrqU0qwGvriYnTrqJ00RmbymGCC",
+        priceIdBase: "price_1T4jDzRPqGu5XMbBORtMxYtb",
+        priceIdExtra: "price_1T4MzdRPqGu5XMbB94cNkCIS",
+        successRedirectUrl: "https://evopg-site.vercel.app/index.html",
+        cancelUrl: "https://evopg-site.vercel.app/index.html?checkout=cancelado",
+        appRedirectAfterLogin: "https://evopg-site.vercel.app/perfil.html",
+        platformUrl: "https://evopg-site.vercel.app/index.html"
+      };
+    </script>
+    <script src="./js/checkout.js" defer></script>
+    <script src="./script.js" defer></script>
 </body>
-
 </html>
