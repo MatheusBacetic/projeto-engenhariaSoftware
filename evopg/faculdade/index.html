@@ -1,1 +1,888 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EvoPG | Gestão com foco, clareza e evolução</title>
+    <link rel="icon" type="image/png" href="img/grafic.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@600..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <!-- Stripe JS SDK -->
+    <script src="https://js.stripe.com/v3/"></script>
+
+</head>
+
+<body>
+
+
+
+    <header class="hero hero-no-image" data-scroll-reveal="headline">
+        <div class="container hero-shell">
+            <div class="hero-nav">
+                <a href="index.html" class="hero-brand" aria-label="EvoPG">
+                    <img src="./img/logo_semFundo.png" alt="EvoPG" class="hero-brand-logo">
+                </a>
+                <div class="top-auth-actions">
+                    <a href="perfil.html" class="top-auth-btn top-login-btn"><i class="material-icons" aria-hidden="true">login</i><span>Login</span></a>
+                    <a href="#" class="top-auth-btn top-signup-btn js-start-checkout" hidden><i class="material-icons" aria-hidden="true">person_add</i><span class="btn-label">Cadastre-se</span></a>
+                </div>
+            </div>
+
+            <div class="hero-content hero-content-split">
+                <div class="hero-copy">
+                    <span class="tag">Plataforma de gestão com foco, clareza e evolução</span>
+                    <h1>Gestão para enxergar, decidir e <span class="hero-word-evoluir">evoluir</span></h1>
+                    <p class="hero-support">O EvoPG entrega visão clara do financeiro, comercial e operação para você transformar dados em decisões estratégicas.</p>
+                    <a href="#" class="btn-primary hero-cta js-start-checkout"><span class="btn-energy"></span><span class="btn-label">Quero evoluir</span></a>
+                    <span class="secure"><i class="material-icons" style="font-size:14px">lock</i> Pagamento seguro · acesso imediato</span>
+                </div>
+
+                <aside class="hero-visual" aria-hidden="true">
+                    <span class="hero-visual-glow"></span>
+                    <figure class="hero-visual-main">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/relatorios.png">
+                            <source src="video/relatorios.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="hero-visual-badge hero-visual-badge-top">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/financeiro1.png">
+                            <source src="video/financeiro.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                    <figure class="hero-visual-badge hero-visual-badge-bottom">
+                        <video autoplay muted loop playsinline preload="metadata" poster="./img/kanban.png">
+                            <source src="video/escuro.mp4" type="video/mp4">
+                        </video>
+                    </figure>
+                </aside>
+            </div>
+        </div>
+    </header>
+
+    <section class="strategic-pillars" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Foco, clareza e evolução na mesma plataforma</h2>
+
+                <p>O EvoPG não apenas registra operações. Ele organiza o presente da sua empresa e orienta melhorias contínuas com base em dados.</p>
+
+            </div>
+
+            <div class="grid-cards">
+
+                <div class="card pillar-card">
+
+                    <div class="icon-bg"><i class="material-icons">center_focus_strong</i></div>
+
+                    <h3>Foco no que realmente importa</h3>
+
+                    <p>Centralize as rotinas críticas e remova ruído para priorizar o que movimenta faturamento, margem e eficiência.</p>
+
+                </div>
+
+                <div class="card pillar-card">
+
+                    <div class="icon-bg"><i class="material-icons">visibility</i></div>
+
+                    <h3>Clareza da situação atual</h3>
+
+                    <p>Entenda rapidamente onde a empresa está bem, onde há gargalos e quais pontos exigem ação imediata.</p>
+
+                </div>
+
+                <div class="card pillar-card">
+
+                    <div class="icon-bg"><i class="material-icons">trending_up</i></div>
+
+                    <h3>Evolução guiada por informação</h3>
+
+                    <p>Transforme análise em plano de melhoria, acompanhe impacto e evolua com consistência, sem decisões no escuro.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="features" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Funcionalidades que viram direção de negócio</h2>
+
+                <p>Cada módulo do EvoPG conecta operação e estratégia para você entender o momento da empresa e agir com precisão.</p>
+
+            </div>
+
+
+
+            <div class="grid-cards">
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">analytics</i></div>
+
+                    <h3>Financeiro com leitura de cenário</h3>
+
+                    <p>Veja entradas, saídas, margem e lucro para decidir com segurança e sem depender de suposição.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">insights</i></div>
+
+                    <h3>Relatórios que mostram causa e prioridade</h3>
+
+                    <p>Identifique gargalos e pontos de melhoria com clareza sobre o que agir primeiro.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">bolt</i></div>
+
+                    <h3>Vendas com previsibilidade e ritmo</h3>
+
+                    <p>Acompanhe funil, conversões e etapas para manter consistência comercial ao longo do mês.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">verified_user</i></div>
+
+                    <h3>Operação alinhada com estratégia</h3>
+
+                    <p>Padronize a rotina da equipe e acompanhe indicadores em um único painel, sem perder o contexto geral.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="audience" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>O EvoPG é para empresas e pessoas físicas que querem evoluir com método</h2>
+
+                <p>Se você precisa enxergar melhor o negócio ou organizar sua vida financeira com consistência, a plataforma foi feita para isso.</p>
+
+            </div>
+
+            <div class="grid-cards">
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">check_circle</i></div>
+
+                    <h3>É para você se...</h3>
+
+                    <ul class="plan-list">
+
+                        <li>Sua empresa cresceu e faltou visão para manter o controle</li>
+
+                        <li>Você é pessoa física e quer organizar receitas, despesas e metas financeiras</li>
+
+                        <li>Você usa planilhas ou ferramentas desconectadas entre si</li>
+
+                        <li>Precisa de foco nas prioridades para tomar melhores decisões</li>
+
+                        <li>Quer guiar a equipe com dados, metas e acompanhamento contínuo</li>
+
+                    </ul>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">block</i></div>
+
+                    <h3>Talvez não seja ideal se...</h3>
+
+                    <ul class="plan-list">
+
+                        <li>Sua empresa exige rotinas fiscais altamente complexas</li>
+
+                        <li>Você precisa de um sistema totalmente customizado</li>
+
+                        <li>Busca um ERP corporativo para operações de grande porte</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="planos" class="pricing" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2 class="plans-heading">Um plano completo para operar bem e evoluir melhor</h2>
+
+                <p class="plans-subtitle">O EVO Pro une controle operacional com clareza estratégica da empresa</p>
+
+            </div>
+
+
+
+            <div class="pricing-grid">
+
+                <div class="price-card popular wide">
+
+                    <div class="badge">VERSÃO COMPLETA DO EVOPG</div>
+
+                    <div class="price-card-body">
+                        <div class="price-card-left">
+                            <div class="plan-groups plan-groups-fill">
+
+                                <div class="plan-group">
+
+                                    <h4>Vendas</h4>
+
+                                    <ul class="plan-list">
+
+                                        <li>Acompanhe negociações do início ao fechamento</li>
+
+                                        <li>Emita pedidos e orçamentos com controle</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="plan-group">
+
+                                    <h4>Estoque</h4>
+
+                                    <ul class="plan-list">
+
+                                        <li>Controle completo de estoque</li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="price-card-divider" aria-hidden="true"></div>
+
+                        <div class="price-card-center">
+                            <div class="price-card-cta">
+                                <div class="price-card-intro">
+                                    <h3 class="price-plan-title">EVO Pro · Controle Total</h3>
+
+                                    <p class="price-plan-subtitle">Para quem quer executar melhor e evoluir com base em dados</p>
+
+                                </div>
+
+                                <div class="price">R$ 99,99/mês</div>
+
+                                <p class="price-helper">Menos que um erro financeiro por mês</p>
+
+                                <a href="#" class="btn-price primary btn-primary js-start-checkout"><span class="btn-energy"></span><span class="btn-label">Quero evoluir com dados</span></a>
+                                <p class="price-support">🔒 Suporte incluso</p>
+                            </div>
+                        </div>
+
+                        <div class="price-card-divider" aria-hidden="true"></div>
+
+                        <div class="price-card-right">
+                            <div class="plan-groups plan-groups-fill">
+
+                                <div class="plan-group">
+
+                                    <h4>Financeiro</h4>
+
+                                    <ul class="plan-list">
+
+                                        <li>Saiba se sua empresa está dando lucro de verdade</li>
+
+                                        <li>Visualize resultados em relatórios e dashboards</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="plan-group">
+
+                                    <h4>Time</h4>
+
+                                    <ul class="plan-list">
+
+                                        <li>Acesso para a equipe operar</li>
+                                        <li>Você acompanha tudo em um só lugar</li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+    
+            </div>
+
+            <div class="premium-integrations" aria-label="Integrações do EvoPG">
+                <div class="premium-integrations-header">
+                    <h3>Integrações prontas para vender e entregar</h3>
+                    <p>No EvoPG, pagamento e logística ficam no mesmo fluxo da operação.</p>
+                </div>
+
+                <div class="premium-integrations-grid">
+                    <article class="premium-integration-card premium-integration-card-shipping" aria-label="Cálculo de frete com Melhor Envio">
+                        <div class="premium-integration-media premium-integration-media-shipping">
+                            <span class="premium-integration-wordmark" aria-hidden="true">Melhor<br>Envio</span>
+                        </div>
+                        <div class="premium-integration-copy">
+                            <span class="premium-integration-kicker premium-integration-kicker-shipping">Integração logística</span>
+                            <h3>Calcule fretes com a API do Melhor Envio</h3>
+                            <p>
+                                No EvoPG, o empresário informa o CEP da empresa e, ao selecionar o cliente, o sistema
+                                calcula o frete pela API do Melhor Envio, mostrando as opções de envio e o preço de
+                                cada uma.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="premium-integration-card premium-integration-card-shipping" aria-label="Atualização de status com Melhor Envio">
+                        <div class="premium-integration-media premium-integration-media-shipping">
+                            <span class="premium-integration-wordmark" aria-hidden="true">Melhor<br>Envio</span>
+                        </div>
+                        <div class="premium-integration-copy">
+                            <span class="premium-integration-kicker premium-integration-kicker-shipping">Integração logística</span>
+                            <h3>Atualize entregas com a API do Melhor Envio</h3>
+                            <p>
+                                O EvoPG também consulta a integração do Melhor Envio para atualizar automaticamente o
+                                status de entrega dos pedidos dentro do sistema.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="premium-integration-card premium-integration-card-centered" aria-label="Integração com Mercado Pago">
+                        <div class="premium-integration-media">
+                            <img src="./img/mp.png" alt="Logo do Mercado Pago" class="premium-integration-logo">
+                        </div>
+                        <div class="premium-integration-copy">
+                            <span class="premium-integration-kicker">Integração de pagamento</span>
+                            <h3>Seu EvoPG já vem com integração ao Mercado Pago</h3>
+                            <p>
+                                No plano premium, você conecta sua conta em poucos cliques e gera checkout direto na operação,
+                                com fluxo mais rápido para cobrança e acompanhamento dos pedidos.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="demo" data-scroll-reveal="panel">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="demo-eyebrow">Demonstração guiada do produto</span>
+
+                <h2>Veja como sua gestão evolui na prática</h2>
+
+                <p>Em poucos minutos, veja como o EvoPG revela o cenário atual da empresa e orienta melhorias no dia a dia.</p>
+
+            </div>
+
+            <div class="video-shell" id="video-demo">
+
+                <div class="video-shell-head">
+                    <span class="video-shell-badge">Tour executivo do EvoPG</span>
+
+                    <div class="video-shell-meta" aria-label="Temas abordados no vídeo">
+                        <span class="video-meta-pill">Financeiro</span>
+                        <span class="video-meta-pill">Comercial</span>
+                        <span class="video-meta-pill">Operação</span>
+                    </div>
+                </div>
+
+                <div class="video-frame-wrap">
+
+                    <div class="video-frame">
+
+                        <video id="demo-video" preload="metadata" playsinline>
+
+                            <source src="video/relatorios.mp4" type="video/mp4">
+
+                        </video>
+
+                        <div class="video-overlay">
+                            <div class="video-overlay-core">
+                                <button class="video-play" type="button" aria-label="Reproduzir video de demonstração">
+                                    <span class="material-icons" aria-hidden="true">play_arrow</span>
+                                </button>
+
+                                <div class="video-overlay-copy">
+                                    <strong>Assistir demonstração guiada</strong>
+                                    <span>Entenda rapidamente onde existe clareza, gargalo e prioridade dentro da operação.</span>
+                                </div>
+                            </div>
+
+                            <div class="video-overlay-foot">
+                                <span class="video-duration">2:30 min</span>
+                                <span class="video-overlay-hint">Sem cadastro para assistir</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="video-actions">
+
+                    <a href="#video-demo" class="btn-primary video-cta"><span class="btn-energy"></span><span class="btn-label">Quero ver o EvoPG na prática</span></a>
+
+                    <p class="video-action-note">Veja o EvoPG transformar leitura operacional em direção prática, sem exigir uma implantação complexa para entender o valor.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="how-it-works" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Da visão do cenário à melhoria em poucos passos</h2>
+
+                <p>Sem complicação técnica. Você entra rápido e já começa a decidir com mais foco e clareza.</p>
+
+            </div>
+
+            <div class="grid-cards">
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">shopping_cart</i></div>
+
+                    <h3>1. Garanta seu acesso</h3>
+
+                    <p>Pagamento mensal com liberação imediata.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">business</i></div>
+
+                    <h3>2. Leia o cenário da sua empresa</h3>
+
+                    <p>Conecte as informações centrais e visualize rapidamente os pontos críticos.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">group</i></div>
+
+                    <h3>3. Alinhe equipe e prioridades</h3>
+
+                    <p>Defina acessos, responsabilidades e metas para cada área da operação.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">point_of_sale</i></div>
+
+                    <h3>4. Evolua com acompanhamento contínuo</h3>
+
+                    <p>Meça resultados, ajuste rotas e evolua a gestão com consistência.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="security" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Segurança para você focar no que importa</h2>
+
+                <p>Seus dados financeiros protegidos para você tomar decisões com tranquilidade.</p>
+
+                <p class="security-line">🔒 Backup automático · Controle de acesso · Sistema 100% na nuvem</p>
+
+            </div>
+
+            <div class="grid-cards">
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">lock</i></div>
+
+                    <h3>Seus dados ficam protegidos o tempo todo</h3>
+
+                    <p>Backup automático diário para evitar perdas e imprevistos.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">cloud</i></div>
+
+                    <h3>Acesse o sistema de onde você estiver</h3>
+
+                    <p>Sistema 100% na nuvem, sem depender de computador ou instalação.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">vpn_key</i></div>
+
+                    <h3>Cada pessoa com acesso do jeito certo</h3>
+
+                    <p>Defina permissões e saiba quem fez o quê dentro do sistema.</p>
+
+                </div>
+
+                <div class="card">
+
+                    <div class="icon-bg"><i class="material-icons">backup</i></div>
+
+                    <h3>Informações disponíveis quando você precisa</h3>
+
+                    <p>Seus dados ficam seguros e acessíveis sempre que você precisar.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="security-cta">
+        <div class="container">
+            <p class="security-bridge">Com segurança garantida, você pode focar em evoluir sua gestão com consistência.</p>
+        </div>
+    </section>
+
+    
+    <section id="faq-section" class="faq" data-scroll-reveal="panel">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Perguntas frequentes</h2>
+
+                <p>Respostas diretas para reduzir qualquer dúvida.</p>
+
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">group</i>
+                    </span>
+                    <h3>Posso usar o EvoPG com minha equipe?</h3>
+                    <p>Sim. Você cria usuários, define permissões e controla o acesso por login em poucos cliques.</p>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">flash_on</i>
+                    </span>
+                    <h3>Em quanto tempo começo a usar?</h3>
+                    <p>Após a contratação, o acesso é liberado rapidamente para você já iniciar a operação no mesmo dia.</p>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">headset_mic</i>
+                    </span>
+                    <h3>Vocês oferecem suporte no início?</h3>
+                    <p>Sim. Você conta com suporte para configuração inicial e dúvidas do uso diário da plataforma.</p>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">bar_chart</i>
+                    </span>
+                    <h3>Financeiro e vendas ficam no mesmo painel?</h3>
+                    <p>Ficam sim. O EvoPG conecta indicadores de operação, comercial e caixa para decisão mais clara.</p>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">settings</i>
+                    </span>
+                    <h3>Preciso instalar algo no computador?</h3>
+                    <p>Não. O acesso é online, com login seguro, e funciona em qualquer dispositivo com navegador.</p>
+                </div>
+
+                <div class="faq-item">
+                    <span class="faq-icon" aria-hidden="true">
+                        <i class="material-icons">shield</i>
+                    </span>
+                    <h3>Meus dados ficam protegidos?</h3>
+                    <p>Sim. A plataforma usa boas práticas de segurança para manter dados e acessos da sua empresa protegidos.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="final-cta" data-scroll-reveal="lift">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <h2>Dê foco para a operação e clareza para crescer</h2>
+
+                <p>Comece agora e evolua sua empresa com decisões guiadas por dados.</p>
+
+            </div>
+
+            <div class="final-cta-actions">
+
+                <a href="#" class="btn-primary cta-strong js-start-checkout"><span class="btn-energy"></span><span class="btn-label">Quero evoluir minha gestão</span></a>
+
+                <p class="cta-support">🔒 Compra segura · Acesso imediato</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <button type="button" class="support-float" id="support-float-btn" aria-controls="support-modal" aria-expanded="false">
+
+        <i class="material-icons" aria-hidden="true">support_agent</i> Suporte
+
+    </button>
+
+
+
+    <footer>
+
+        <p>© 2026 EvoPG Sistemas. Todos os direitos reservados.</p>
+
+    </footer>
+
+    <div class="checkout-terms-modal" id="checkout-terms-modal" hidden>
+        <div class="checkout-terms-modal-card" role="dialog" aria-modal="true" aria-labelledby="checkout-terms-title">
+            <div class="checkout-terms-modal-header">
+                <span class="checkout-success-kicker">Contrato de uso</span>
+                <button type="button" class="checkout-terms-close-btn" id="checkout-terms-close-btn" aria-label="Fechar contrato">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </button>
+            </div>
+            <h2 id="checkout-terms-title">Termos de Uso e Condições de Serviço - EvoPG</h2>
+            <p class="checkout-terms-intro">Leia e aceite este contrato antes de continuar para o checkout do Stripe.</p>
+            <div class="checkout-terms-meta">
+                <span class="checkout-terms-meta-item">
+                    <i class="material-icons" aria-hidden="true">verified_user</i>
+                    Validade jurídica no Brasil
+                </span>
+                <span class="checkout-terms-meta-item">
+                    <i class="material-icons" aria-hidden="true">event</i>
+                    Atualizado em 28/02/2026
+                </span>
+            </div>
+
+            <div class="checkout-terms-highlights">
+                <div class="checkout-terms-highlight">
+                    <strong>CDC</strong>
+                    <span>Direito de arrependimento em até 7 dias</span>
+                </div>
+                <div class="checkout-terms-highlight">
+                    <strong>LGPD</strong>
+                    <span>Usuário como Controlador e EvoPG como Operador</span>
+                </div>
+                <div class="checkout-terms-highlight">
+                    <strong>SaaS As Is</strong>
+                    <span>Disponibilidade conforme infraestrutura de terceiros</span>
+                </div>
+            </div>
+
+            <div class="checkout-terms-scroll">
+                <section class="checkout-terms-clause">
+                    <h3>1. Natureza do serviço</h3>
+                    <p>O EvoPG é um software SaaS de apoio à gestão. A obrigação do fornecedor é de meio, não de resultado.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>2. Responsabilidade fiscal e contábil</h3>
+                    <p>O usuário é o único responsável pela correção de alíquotas, códigos fiscais, documentos e obrigações acessórias. O EvoPG não presta consultoria contábil, fiscal ou jurídica.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>3. Dados inseridos e decisões</h3>
+                    <p>Entradas, parametrizações e decisões tomadas com base em relatórios da plataforma são de responsabilidade exclusiva do usuário e/ou seu contador.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>4. Disponibilidade e infraestrutura</h3>
+                    <p>O serviço é fornecido "As Is" e "As Available", com dependência de infraestrutura de terceiros (incluindo Vercel e Supabase), sem garantia de disponibilidade ininterrupta.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>5. Limitação de responsabilidade</h3>
+                    <p>Não há responsabilidade por danos indiretos, lucros cessantes, perda de oportunidade ou autuações fiscais decorrentes de dados inseridos pelo usuário, ressalvadas hipóteses legais obrigatórias.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>6. Pagamento, inadimplência e bloqueio</h3>
+                    <p>Planos são recorrentes e pré-pagos. Após 15 dias de inadimplência, o acesso pode ser suspenso. Em suspensão prolongada, os dados podem ser excluídos de forma definitiva conforme os Termos.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>7. Reembolso e arrependimento</h3>
+                    <p>Compras online têm direito de arrependimento em até 7 dias corridos (art. 49 do CDC), com estorno integral. Após esse prazo, não há reembolso proporcional.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>8. LGPD</h3>
+                    <p>O usuário atua como Controlador dos dados que insere no sistema e o EvoPG atua como Operador para fins de processamento e armazenamento necessários ao funcionamento da plataforma.</p>
+                </section>
+
+                <section class="checkout-terms-clause">
+                    <h3>9. Aceite eletrônico</h3>
+                    <p>Ao marcar o aceite e continuar, você declara que leu, compreendeu e concorda integralmente com os Termos de Uso e Condições de Serviço da plataforma EvoPG.</p>
+                </section>
+            </div>
+
+            <label class="checkout-terms-accept">
+                <input type="checkbox" id="checkout-terms-accept-checkbox">
+                <span>Li e concordo expressamente com os Termos de Uso e Condições de Serviço.</span>
+            </label>
+
+            <div class="checkout-terms-actions">
+                <button type="button" class="checkout-terms-back-btn" id="checkout-terms-back-btn">Voltar</button>
+                <button type="button" class="btn-primary checkout-terms-continue-btn" id="checkout-terms-continue-btn" disabled>
+                    <span class="btn-energy"></span>
+                    <span class="btn-label">Aceitar e ir para pagamento</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="checkout-success-modal" id="checkout-success-modal" hidden>
+        <div class="checkout-success-modal-card" role="dialog" aria-modal="true" aria-labelledby="checkout-success-title">
+            <span class="checkout-success-kicker">Pagamento confirmado</span>
+            <h2 id="checkout-success-title">Conta criada com sucesso</h2>
+            <p>Agora clique em Login e redefina sua senha para concluir o primeiro acesso na plataforma.</p>
+            <div class="checkout-success-actions">
+                <a href="perfil.html" class="btn-primary" id="checkout-success-login-btn">
+                    <span class="btn-energy"></span>
+                    <span class="btn-label">Ir para Login e redefinir senha</span>
+                </a>
+                <button type="button" class="checkout-success-close-btn" id="checkout-success-close-btn">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="support-modal" id="support-modal" hidden>
+        <div class="support-modal-card" role="dialog" aria-modal="true" aria-labelledby="support-modal-title">
+            <div class="support-modal-header">
+                <h2 id="support-modal-title">Falar com o suporte</h2>
+                <button type="button" class="support-modal-close" id="support-modal-close" aria-label="Fechar suporte">
+                    <i class="material-icons" aria-hidden="true">close</i>
+                </button>
+            </div>
+            <p>Preencha seus dados e clique em enviar para falar com o suporte sem sair do site.</p>
+            <form id="support-form" class="support-form">
+                <label for="support-name">Seu nome</label>
+                <input type="text" id="support-name" name="name" maxlength="80" autocomplete="name" required>
+                <label for="support-email">Seu e-mail</label>
+                <input type="email" id="support-email" name="email" maxlength="160" autocomplete="email" required>
+                <label for="support-message">Mensagem</label>
+                <textarea id="support-message" name="message" rows="4" maxlength="1200" required></textarea>
+                <div class="support-hp" aria-hidden="true">
+                    <label for="support-company">Empresa</label>
+                    <input type="text" id="support-company" name="company" tabindex="-1" autocomplete="off">
+                </div>
+                <button type="submit" class="support-submit-btn">Enviar mensagem</button>
+                <p id="support-feedback" class="support-feedback" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- Checkout Config & Logic -->
+    <script>
+      window.EVOPG_CHECKOUT_CONFIG = {
+        functionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/criar-checkout",
+        supportFunctionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/enviar-suporte",
+        supabaseUrl: "https://iihqakwfqlkpsutnfpvq.supabase.co",
+        anonKey: "sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt",
+        stripePublishableKey: "pk_live_51SqZZNRPqGu5XMbBSPeyN7MeakOdBZef6HRdNDSl2rFGnX0jj7FcWTThcFNRJtUMK4Yes1TjrqU0qwGvriYnTrqJ00RmbymGCC",
+        priceIdBase: "price_1T4jDzRPqGu5XMbBORtMxYtb",
+        priceIdExtra: "price_1T4MzdRPqGu5XMbB94cNkCIS",
+        successRedirectUrl: "https://evopg-site.vercel.app/index.html",
+        cancelUrl: "https://evopg-site.vercel.app/index.html?checkout=cancelado",
+        appRedirectAfterLogin: "https://evopg-site.vercel.app/perfil.html",
+        platformUrl: "https://evopg-site.vercel.app/index.html"
+      };
+    </script>
+    <script src="./js/checkout.js" defer></script>
+    <script src="./script.js" defer></script>
+</body>
+</html>
 
