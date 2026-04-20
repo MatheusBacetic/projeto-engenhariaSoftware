@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvoPG | Perfil</title>
+  <link rel="icon" type="image/png" href="img/grafic.png">
+  <link rel="stylesheet" href="css/vendor-fonts.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <div class="container profile-back-row">
+    <a href="index.html" class="back-link"><i class="material-icons">arrow_back</i><span>Voltar</span></a>
+  </div>
+
+  <main class="container profile-main">
+    <section class="panel panel-profile" id="profile-panel" hidden>
+      <h1 id="profile-title">Seu perfil</h1>
+      <p class="subtitle" id="profile-subtitle">Acesse sua conta, plataforma e assinatura.</p>
+
+      <div class="identity-grid" id="profile-identity-grid">
+        <div class="identity-item identity-item-user">
+          <div class="identity-user-row">
+            <span class="profile-avatar" id="profile-avatar" aria-hidden="true">--</span>
+            <div class="identity-user-meta">
+              <span class="label">Nome</span>
+              <strong id="profile-name">-</strong>
+            </div>
+          </div>
+          <div class="profile-technical-row">
+            <span class="technical-label">Usu&aacute;rio ID</span>
+            <code id="profile-user-id" class="technical-id">-</code>
+            <button type="button" class="copy-id-btn" id="copy-user-id-btn" aria-label="Copiar ID de usu&aacute;rio" title="Copiar ID">
+              <i class="material-icons" aria-hidden="true">content_copy</i>
+            </button>
+          </div>
+        </div>
+        <div class="identity-item identity-item-contact">
+          <span class="label">E-mail</span>
+          <strong id="profile-email">-</strong>
+          <div class="identity-subitem" id="profile-role-item" hidden>
+            <span class="label">Função</span>
+            <strong id="profile-role">-</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-row" id="profile-action-row">
+        <div class="action-row-primary">
+          <button type="button" class="btn btn-secondary" id="manage-subscription-btn">Gerenciar assinatura</button>
+          <button type="button" class="btn btn-ghost" id="toggle-company-section-btn">Configuração da empresa</button>
+          <button type="button" class="btn btn-ghost" id="toggle-integrations-section-btn">Integra&ccedil;&otilde;es</button>
+          <button type="button" class="btn btn-ghost" id="toggle-password-section-btn">Alterar senha</button>
+        </div>
+        <button type="button" class="btn btn-logout" id="logout-btn">Sair</button>
+      </div>
+
+      <section class="company-section" id="company-section" hidden>
+        <h2 id="company-section-title">Ficha fiscal da empresa</h2>
+        <p class="hint" id="company-section-hint">Preencha os dados fiscais para concluir o cadastro da empresa no EvoPG.</p>
+        <div class="tax-person-type-switch" id="tax-person-type-switch" role="group" aria-label="Tipo de cadastro fiscal">
+          <button
+            type="button"
+            class="tax-person-type-btn is-active"
+            id="tax-person-company-btn"
+            data-person-type="company"
+            aria-pressed="true"
+          >
+            Pessoa jur&iacute;dica
+          </button>
+          <button
+            type="button"
+            class="tax-person-type-btn"
+            id="tax-person-individual-btn"
+            data-person-type="individual"
+            aria-pressed="false"
+          >
+            Pessoa f&iacute;sica
+          </button>
+        </div>
+        <form id="company-form" class="form-grid company-form-grid">
+          <label class="field" id="company-document-field">
+            <span id="company-document-label">CNPJ</span>
+            <input
+              type="text"
+              id="company-cnpj"
+              inputmode="numeric"
+              maxlength="14"
+              placeholder="Somente n&uacute;meros (14 d&iacute;gitos)"
+              autocomplete="off"
+              required
+            >
+          </label>
+          <label class="field" id="company-state-registration-field">
+            <span>Inscri&ccedil;&atilde;o Estadual (IE)</span>
+            <input
+              type="text"
+              id="company-state-registration"
+              maxlength="40"
+              placeholder="Ex.: 123456789"
+              autocomplete="off"
+              required
+            >
+          </label>
+          <label class="field" id="company-municipal-registration-field">
+            <span>Inscri&ccedil;&atilde;o Municipal (IM)</span>
+            <input
+              type="text"
+              id="company-municipal-registration"
+              maxlength="40"
+              placeholder="Ex.: 987654321"
+              autocomplete="off"
+              required
+            >
+          </label>
+          <div class="field field-tax-regime" id="company-tax-regime-field">
+            <span id="company-tax-regime-field-label">Regime Tribut&aacute;rio</span>
+            <select id="company-tax-regime" class="tax-regime-native" aria-hidden="true" tabindex="-1">
+              <option value="">Selecione o regime</option>
+              <option value="MEI">MEI</option>
+              <option value="SIMPLES">Simples Nacional</option>
+              <option value="PRESUMIDO">Lucro Presumido</option>
+              <option value="REAL">Lucro Real</option>
+            </select>
+            <div class="tax-regime-dropdown" id="company-tax-regime-dropdown">
+              <button
+                type="button"
+                class="tax-regime-trigger"
+                id="company-tax-regime-trigger"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-labelledby="company-tax-regime-field-label company-tax-regime-label"
+              >
+                <span id="company-tax-regime-label">Selecione o regime</span>
+                <i class="material-icons" aria-hidden="true">expand_more</i>
+              </button>
+              <div class="tax-regime-menu-wrap" id="company-tax-regime-menu-wrap" hidden>
+                <ul class="tax-regime-menu" id="company-tax-regime-menu" role="listbox" aria-label="Regime Tribut&aacute;rio">
+                  <li><button type="button" class="tax-regime-option tax-regime-option-placeholder" data-tax-regime-option="" role="option">Selecione o regime</button></li>
+                  <li><button type="button" class="tax-regime-option" data-tax-regime-option="MEI" role="option">MEI</button></li>
+                  <li><button type="button" class="tax-regime-option" data-tax-regime-option="SIMPLES" role="option">Simples Nacional</button></li>
+                  <li><button type="button" class="tax-regime-option" data-tax-regime-option="PRESUMIDO" role="option">Lucro Presumido</button></li>
+                  <li><button type="button" class="tax-regime-option" data-tax-regime-option="REAL" role="option">Lucro Real</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="company-save-btn">Salvar ficha fiscal</button>
+        </form>
+      </section>
+
+      <section class="integrations-section" id="integrations-section" hidden>
+        <h2>Integra&ccedil;&otilde;es de pagamento</h2>
+        <p class="hint">Conecte sua conta do Mercado Pago para gerar checkout na tela de pedidos.</p>
+        <article class="integration-card" id="mp-integration-card">
+          <div class="integration-card-top">
+            <div class="integration-card-title-wrap">
+              <span class="integration-kicker">Mercado Pago</span>
+              <p class="integration-status-text" id="mp-connection-status-text">Status não consultado.</p>
+            </div>
+            <span class="integration-pill is-unknown" id="mp-connection-pill">Não verificado</span>
+          </div>
+          <p class="integration-meta" id="mp-connection-meta">Use os botões abaixo para conectar, consultar status ou desconectar.</p>
+          <div class="integration-actions">
+            <button type="button" class="btn btn-primary" id="mp-connect-btn">
+              <img src="img/mp.ico" alt="" aria-hidden="true" class="mp-connect-icon">
+              <span>Conectar Mercado Pago</span>
+            </button>
+            <button type="button" class="btn btn-ghost" id="mp-refresh-status-btn">Atualizar status</button>
+            <button type="button" class="btn btn-logout" id="mp-disconnect-btn">Desconectar</button>
+          </div>
+        </article>
+      </section>
+
+      <div class="platform-cta-wrap" id="profile-platform-cta">
+        <button type="button" class="platform-cta-btn" id="open-platform-btn">
+          <span class="platform-cta-energy" aria-hidden="true"></span>
+          <span class="platform-cta-shine" aria-hidden="true"></span>
+          <span class="platform-cta-main">
+            <span class="platform-cta-icon-wrap" aria-hidden="true">
+              <img src="img/grafic.png" alt="" class="platform-cta-icon">
+            </span>
+            <span class="platform-cta-title">EvoPG</span>
+          </span>
+        </button>
+        <span class="platform-cta-subtitle">Ir para a plataforma</span>
+      </div>
+
+      <section id="password-section" hidden>
+        <hr class="divider">
+
+        <h2>Definir senha</h2>
+        <p class="hint">Se voc&ecirc; entrou por link m&aacute;gico, crie uma senha para os pr&oacute;ximos acessos.</p>
+        <form id="set-password-form" class="form-grid">
+          <label class="field">
+            <span>Nova senha</span>
+            <input type="password" id="new-password" minlength="8" required placeholder="M&iacute;nimo 8 caracteres">
+          </label>
+          <label class="field">
+            <span>Confirmar senha</span>
+            <input type="password" id="confirm-password" minlength="8" required placeholder="Repita a senha">
+          </label>
+          <button type="submit" class="btn btn-primary">Salvar senha</button>
+        </form>
+      </section>
+    </section>
+
+    <section class="panel panel-auth" id="auth-panel">
+      <h1>Acessar conta</h1>
+      <p class="subtitle">Entre com senha. Se preferir, troque a op&ccedil;&atilde;o abaixo.</p>
+
+      <div class="auth-mode-switch" role="tablist" aria-label="Forma de acesso">
+        <button
+          type="button"
+          class="auth-mode-btn is-active"
+          data-auth-mode="password"
+          role="tab"
+          aria-selected="true"
+        >
+          Senha
+        </button>
+        <button
+          type="button"
+          class="auth-mode-btn"
+          data-auth-mode="magic"
+          role="tab"
+          aria-selected="false"
+        >
+          Link m&aacute;gico
+        </button>
+        <button
+          type="button"
+          class="auth-mode-btn"
+          data-auth-mode="recovery"
+          role="tab"
+          aria-selected="false"
+        >
+          Recuperar senha
+        </button>
+      </div>
+
+      <form id="password-login-form" class="form-grid auth-mode-panel" data-auth-mode-panel="password">
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" id="auth-email" required placeholder="seuemail@empresa.com">
+        </label>
+        <label class="field">
+          <span>Senha</span>
+          <input type="password" id="auth-password" required placeholder="Sua senha">
+        </label>
+        <button type="submit" class="btn btn-primary">Entrar com senha</button>
+      </form>
+
+      <form id="magic-link-form" class="form-grid auth-mode-panel" data-auth-mode-panel="magic" hidden>
+        <label class="field">
+          <span>E-mail</span>
+          <input type="email" id="magic-email" required placeholder="seuemail@empresa.com">
+        </label>
+        <button type="submit" class="btn btn-secondary">Enviar link de acesso</button>
+      </form>
+
+      <form id="recovery-form" class="form-grid compact auth-mode-panel" data-auth-mode-panel="recovery" hidden>
+        <label class="field">
+          <span>E-mail para criar/recuperar senha</span>
+          <input type="email" id="recovery-email" required placeholder="seuemail@empresa.com">
+        </label>
+        <button type="submit" class="btn btn-ghost">Enviar link para definir senha</button>
+      </form>
+    </section>
+
+    <p id="profile-status" class="status" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="js/vendor/supabase-js-v2.js"></script>
+  <script>
+    window.EVOPG_PROFILE_CONFIG = {
+      functionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/criar-checkout",
+      supabaseUrl: "https://iihqakwfqlkpsutnfpvq.supabase.co",
+      anonKey: "sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt",
+      profileUrl: "https://evopg-site.vercel.app/perfil.html",
+      platformUrl: "https://evopg-plataforma.vercel.app/login.html",
+      persistSession: true
+    };
+  </script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="pt-br">
 
@@ -11,11 +11,8 @@
     <title>EvoPG | Gestão com foco, clareza e evolução</title>
     <link rel="icon" type="image/png" href="img/grafic.png">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Sora:wght@600..800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <!-- Stripe JS SDK -->
-    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="css/vendor-fonts.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -23,11 +20,11 @@
 
 
 
-    <header class="hero hero-no-image" data-scroll-reveal="headline">
+    <header class="hero hero-no-image">
         <div class="container hero-shell">
             <div class="hero-nav">
                 <a href="index.html" class="hero-brand" aria-label="EvoPG">
-                    <img src="./img/logo_semFundo.png" alt="EvoPG" class="hero-brand-logo">
+                    <img src="img/logo_semFundo.png" alt="EvoPG" class="hero-brand-logo">
                 </a>
                 <div class="top-auth-actions">
                     <a href="perfil.html" class="top-auth-btn top-login-btn"><i class="material-icons" aria-hidden="true">login</i><span>Login</span></a>
@@ -47,17 +44,17 @@
                 <aside class="hero-visual" aria-hidden="true">
                     <span class="hero-visual-glow"></span>
                     <figure class="hero-visual-main">
-                        <video autoplay muted loop playsinline preload="metadata" poster="./img/relatorios.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="img/relatorios.png">
                             <source src="video/relatorios.mp4" type="video/mp4">
                         </video>
                     </figure>
                     <figure class="hero-visual-badge hero-visual-badge-top">
-                        <video autoplay muted loop playsinline preload="metadata" poster="./img/financeiro1.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="img/financeiro1.png">
                             <source src="video/financeiro.mp4" type="video/mp4">
                         </video>
                     </figure>
                     <figure class="hero-visual-badge hero-visual-badge-bottom">
-                        <video autoplay muted loop playsinline preload="metadata" poster="./img/kanban.png">
+                        <video autoplay muted loop playsinline preload="metadata" poster="img/kanban.png">
                             <source src="video/escuro.mp4" type="video/mp4">
                         </video>
                     </figure>
@@ -66,7 +63,7 @@
         </div>
     </header>
 
-    <section class="strategic-pillars" data-scroll-reveal="lift">
+    <section class="strategic-pillars">
 
         <div class="container">
 
@@ -118,7 +115,7 @@
 
 
 
-    <section class="features" data-scroll-reveal="lift">
+    <section class="features">
 
         <div class="container">
 
@@ -180,7 +177,7 @@
 
     </section>
 
-    <section class="audience" data-scroll-reveal="lift">
+    <section class="audience">
 
         <div class="container">
 
@@ -240,7 +237,7 @@
 
     </section>
 
-    <section id="planos" class="pricing" data-scroll-reveal="lift">
+    <section id="planos">
 
         <div class="container">
 
@@ -392,7 +389,7 @@
 
                     <article class="premium-integration-card premium-integration-card-centered" aria-label="Integração com Mercado Pago">
                         <div class="premium-integration-media">
-                            <img src="./img/mp.png" alt="Logo do Mercado Pago" class="premium-integration-logo">
+                            <img src="img/mp.png" alt="Logo do Mercado Pago" class="premium-integration-logo">
                         </div>
                         <div class="premium-integration-copy">
                             <span class="premium-integration-kicker">Integração de pagamento</span>
@@ -410,7 +407,7 @@
 
     </section>
 
-    <section class="demo" data-scroll-reveal="panel">
+    <section class="demo">
 
         <div class="container">
 
@@ -484,7 +481,7 @@
 
 
 
-    <section class="how-it-works" data-scroll-reveal="lift">
+    <section class="how-it-works">
 
         <div class="container">
 
@@ -546,7 +543,7 @@
 
 
 
-    <section class="security" data-scroll-reveal="lift">
+    <section class="security">
 
         <div class="container">
 
@@ -615,7 +612,7 @@
     </section>
 
     
-    <section id="faq-section" class="faq" data-scroll-reveal="panel">
+    <section id="faq-section" class="faq">
 
         <div class="container">
 
@@ -685,7 +682,7 @@
 
 
 
-    <section class="final-cta" data-scroll-reveal="lift">
+    <section class="final-cta">
 
         <div class="container">
 
@@ -864,25 +861,316 @@
 
 
 
+<script>
 
-    <!-- Checkout Config & Logic -->
-    <script>
-      window.EVOPG_CHECKOUT_CONFIG = {
-        functionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/criar-checkout",
-        supportFunctionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/enviar-suporte",
-        supabaseUrl: "https://iihqakwfqlkpsutnfpvq.supabase.co",
-        anonKey: "sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt",
-        stripePublishableKey: "pk_live_51SqZZNRPqGu5XMbBSPeyN7MeakOdBZef6HRdNDSl2rFGnX0jj7FcWTThcFNRJtUMK4Yes1TjrqU0qwGvriYnTrqJ00RmbymGCC",
-        priceIdBase: "price_1T4jDzRPqGu5XMbBORtMxYtb",
-        priceIdExtra: "price_1T4MzdRPqGu5XMbB94cNkCIS",
-        successRedirectUrl: "https://evopg-site.vercel.app/index.html",
-        cancelUrl: "https://evopg-site.vercel.app/index.html?checkout=cancelado",
-        appRedirectAfterLogin: "https://evopg-site.vercel.app/perfil.html",
-        platformUrl: "https://evopg-site.vercel.app/index.html"
-      };
-    </script>
-    <script src="./js/checkout.js" defer></script>
-    <script src="./script.js" defer></script>
+(function () {
+
+  var btn = document.getElementById('support-float-btn');
+  var modal = document.getElementById('support-modal');
+  var closeBtn = document.getElementById('support-modal-close');
+  var form = document.getElementById('support-form');
+  var nameInput = document.getElementById('support-name');
+  var emailInput = document.getElementById('support-email');
+  var messageInput = document.getElementById('support-message');
+  var companyInput = document.getElementById('support-company');
+  var feedback = document.getElementById('support-feedback');
+  var submitBtn = form ? form.querySelector('.support-submit-btn') : null;
+  var supportConfig = window.EVOPG_CHECKOUT_CONFIG || {};
+  var SUPPORT_FUNCTION_URL = supportConfig.supportFunctionUrl || 'https://iihqakwfqlkpsutnfpvq.functions.supabase.co/enviar-suporte';
+  var SUPPORT_ANON_KEY = supportConfig.anonKey || 'sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt';
+  var isSubmitting = false;
+
+  if (!btn) return;
+
+  function setFeedback(type, text) {
+
+    if (!feedback) return;
+
+    feedback.textContent = text || '';
+    feedback.classList.remove('is-error', 'is-success');
+
+    if (type === 'error') {
+      feedback.classList.add('is-error');
+    } else if (type === 'success') {
+      feedback.classList.add('is-success');
+    }
+
+  }
+
+  function setSubmittingState(value) {
+
+    isSubmitting = !!value;
+
+    if (submitBtn) {
+      submitBtn.disabled = isSubmitting;
+      submitBtn.textContent = isSubmitting ? 'Enviando...' : 'Enviar mensagem';
+    }
+
+  }
+
+  function isLikelyEmail(value) {
+
+    if (!value || value.length > 160) return false;
+    if (value.indexOf(' ') !== -1) return false;
+
+    var atIndex = value.indexOf('@');
+    if (atIndex <= 0 || atIndex !== value.lastIndexOf('@') || atIndex >= value.length - 1) {
+      return false;
+    }
+
+    var domain = value.slice(atIndex + 1);
+    var dotIndex = domain.lastIndexOf('.');
+
+    return dotIndex > 0 && dotIndex < domain.length - 1;
+
+  }
+
+  function setSupportModalVisible(isVisible) {
+
+    if (!modal) return;
+
+    modal.hidden = !isVisible;
+    btn.setAttribute('aria-expanded', isVisible ? 'true' : 'false');
+    document.body.classList.toggle('is-support-modal-open', isVisible);
+
+    if (!isVisible) {
+      setSubmittingState(false);
+      setFeedback('', '');
+    }
+
+    if (isVisible && nameInput) {
+      window.setTimeout(function () {
+        nameInput.focus();
+      }, 0);
+    }
+
+  }
+
+  function toggle() {
+
+    var trigger = window.innerHeight * 0.6;
+
+    if (window.scrollY > trigger) {
+
+      btn.classList.add('is-visible');
+
+    } else {
+
+      btn.classList.remove('is-visible');
+
+    }
+
+  }
+
+  window.addEventListener('scroll', toggle, { passive: true });
+
+  window.addEventListener('resize', toggle);
+
+  toggle();
+
+  btn.addEventListener('click', function () {
+    setSupportModalVisible(true);
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      setSupportModalVisible(false);
+    });
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        setSupportModalVisible(false);
+      }
+    });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && modal && !modal.hidden) {
+      setSupportModalVisible(false);
+    }
+  });
+
+  if (form) {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      if (isSubmitting) return;
+
+      var nameValue = nameInput ? nameInput.value.trim() : '';
+      var emailValue = emailInput ? emailInput.value.trim().toLowerCase() : '';
+      var messageValue = messageInput ? messageInput.value.trim() : '';
+      var companyValue = companyInput ? companyInput.value.trim() : '';
+
+      if (!nameValue || !emailValue || !messageValue) {
+        setFeedback('error', 'Preencha nome, e-mail e mensagem.');
+        return;
+      }
+
+      if (!isLikelyEmail(emailValue)) {
+        setFeedback('error', 'Informe um e-mail valido.');
+        return;
+      }
+
+      setFeedback('', '');
+      setSubmittingState(true);
+
+      try {
+        var runtimeConfig = window.EVOPG_CHECKOUT_CONFIG || {};
+        var supportFunctionUrl = runtimeConfig.supportFunctionUrl || SUPPORT_FUNCTION_URL;
+        var supportAnonKey = runtimeConfig.anonKey || SUPPORT_ANON_KEY;
+
+        var response = await fetch(supportFunctionUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': supportAnonKey,
+            'Authorization': 'Bearer ' + supportAnonKey
+          },
+          body: JSON.stringify({
+            name: nameValue,
+            email: emailValue,
+            message: messageValue,
+            company: companyValue,
+            pageUrl: window.location.href,
+            userAgent: navigator.userAgent
+          })
+        });
+
+        var result = {};
+        try {
+          result = await response.json();
+        } catch (parseError) {
+          result = {};
+        }
+
+        if (!response.ok || !result.ok) {
+          var backendError = (result && typeof result.error === 'string') ? result.error.trim() : '';
+          throw new Error(backendError || 'Não foi possível enviar agora. Tente novamente em instantes.');
+        }
+
+        setFeedback('success', 'Mensagem enviada com sucesso. O suporte retornará no seu e-mail.');
+        form.reset();
+      } catch (error) {
+        var errorMessage = (error && error.message) ? String(error.message) : 'Não foi possível enviar sua mensagem agora.';
+        setFeedback('error', errorMessage);
+      } finally {
+        setSubmittingState(false);
+      }
+    });
+  }
+
+})();
+
+</script>
+
+<script class="video-cta-script">
+
+(function () {
+
+  var btn = document.querySelector('.video-cta');
+
+  var video = document.getElementById('demo-video');
+
+  var overlay = document.querySelector('.video-overlay');
+
+  if (!video) return;
+
+  function startVideo() {
+    video.setAttribute('controls', 'controls');
+    video.play().catch(function () {});
+    if (overlay) overlay.classList.add('is-hidden');
+  }
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      setTimeout(startVideo, 200);
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', startVideo);
+  }
+
+})();
+
+</script>
+
+<script class="premium-scroll-script">
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var body = document.body;
+
+  if (!body) return;
+
+  body.classList.add('has-premium-scroll');
+
+  function mark(elements, kind, baseDelay, stepDelay) {
+    Array.prototype.forEach.call(elements || [], function (element, index) {
+      if (!element || element.hasAttribute('data-scroll-reveal')) return;
+      element.setAttribute('data-scroll-reveal', kind);
+      element.style.setProperty('--scroll-delay', ((baseDelay || 0) + ((stepDelay || 0) * index)) + 'ms');
+    });
+  }
+
+  function markWithin(containerSelector, itemSelector, kind, baseDelay, stepDelay) {
+    Array.prototype.forEach.call(document.querySelectorAll(containerSelector), function (container) {
+      mark(container.querySelectorAll(itemSelector), kind, baseDelay, stepDelay);
+    });
+  }
+
+  mark(document.querySelectorAll('.section-header'), 'headline', 0, 0);
+  markWithin('.strategic-pillars .grid-cards', '.card', 'lift', 70, 90);
+  markWithin('.features .grid-cards', '.card', 'lift', 70, 90);
+  markWithin('.audience .grid-cards', '.card', 'lift', 70, 90);
+  mark(document.querySelectorAll('.price-card.wide'), 'panel', 110, 0);
+  mark(document.querySelectorAll('.premium-integrations-header'), 'headline', 40, 0);
+  markWithin('.premium-integrations-grid', '.premium-integration-card', 'panel', 90, 90);
+  mark(document.querySelectorAll('.demo .video-shell'), 'panel', 120, 0);
+  markWithin('.how-it-works .grid-cards', '.card', 'lift', 70, 90);
+  markWithin('.security .grid-cards', '.card', 'lift', 70, 90);
+  mark(document.querySelectorAll('.security-bridge'), 'panel', 60, 0);
+  markWithin('.faq-list', '.faq-item', 'lift', 50, 70);
+  mark(document.querySelectorAll('.final-cta-actions'), 'panel', 90, 0);
+
+  var targets = document.querySelectorAll('[data-scroll-reveal]');
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-scroll-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.16,
+    rootMargin: '0px 0px -12% 0px'
+  });
+
+  Array.prototype.forEach.call(targets, function (element) {
+    observer.observe(element);
+  });
+})();
+</script>
+
+<script>
+  window.EVOPG_CHECKOUT_CONFIG = {
+    functionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/criar-checkout",
+    supportFunctionUrl: "https://iihqakwfqlkpsutnfpvq.functions.supabase.co/enviar-suporte",
+    supabaseUrl: "https://iihqakwfqlkpsutnfpvq.supabase.co",
+    anonKey: "sb_publishable_46k9q7qFFM6uwlE9T957kA_KkYjOYZt",
+    stripePublishableKey: "pk_live_51SqZZNRPqGu5XMbBSPeyN7MeakOdBZef6HRdNDSl2rFGnX0jj7FcWTThcFNRJtUMK4Yes1TjrqU0qwGvriYnTrqJ00RmbymGCC",
+    priceIdBase: "price_1T4jDzRPqGu5XMbBORtMxYtb",
+    priceIdExtra: "price_1T4MzdRPqGu5XMbB94cNkCIS",
+    successRedirectUrl: "https://evopg-site.vercel.app/index.html",
+    cancelUrl: "https://evopg-site.vercel.app/index.html?checkout=cancelado",
+    appRedirectAfterLogin: "https://evopg-site.vercel.app/perfil.html",
+    platformUrl: "https://evopg-site.vercel.app/index.html"
+
+  };
+</script>
+<script src="js/checkout.js"></script>
 </body>
-</html>
 
+</html>

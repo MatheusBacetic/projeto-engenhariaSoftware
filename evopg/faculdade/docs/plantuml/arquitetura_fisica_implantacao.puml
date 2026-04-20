@@ -1,0 +1,19 @@
+@startuml
+title Diagrama de Implantacao Simplificado da Solucao
+
+left to right direction
+
+node "No cliente\nNavegador web\nHTML + CSS + JavaScript" as Cliente
+node "No web\nVercel\nsite estatico" as Web
+node "No backend\nSupabase\nAuth + PostgreSQL + Edge Functions" as Backend
+cloud "Stripe" as Stripe
+cloud "Mercado Pago" as MercadoPago
+cloud "Resend / E-mail\ntransacional" as Email
+
+Cliente --> Web : HTTPS
+Web --> Backend : API / Auth
+Backend --> Stripe : checkout / webhook
+Backend --> MercadoPago : OAuth
+Backend --> Email : envio de e-mail
+
+@enduml
