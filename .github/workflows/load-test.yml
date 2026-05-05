@@ -15,5 +15,5 @@ jobs:
       - name: Run k6 test
         uses: grafana/run-k6-action@v1 # Nova ação oficial para rodar o teste
         with:
-          path: tests/load/k6-script.js
+          path: evopg/faculdade/tests/load/k6-script.js
           flags: --env BASE_URL=https://matheusbacetic.github.io/projeto-engenhariaSoftware/
