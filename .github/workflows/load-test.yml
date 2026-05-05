@@ -1,0 +1,16 @@
+name: Load Test
+on: [push]
+
+jobs:
+  k6_test:
+    name: Run k6 Load Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run k6 test
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: tests/load/k6-script.js
+          flags: --env BASE_URL=https://matheusbacetic.github.io/projeto-engenhariaSoftware/
