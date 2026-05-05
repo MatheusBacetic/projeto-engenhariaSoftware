@@ -7,10 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # Atualizado para v4 (resolve o aviso do Node)
+        uses: actions/checkout@v4
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1 # Nova ação oficial para instalar o k6
 
       - name: Run k6 test
-        uses: grafana/k6-action@v0.5.0 # Versão mais recente do k6
+        uses: grafana/run-k6-action@v1 # Nova ação oficial para rodar o teste
         with:
-          filename: tests/load/k6-script.js
+          path: tests/load/k6-script.js
           flags: --env BASE_URL=https://matheusbacetic.github.io/projeto-engenhariaSoftware/
