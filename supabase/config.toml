@@ -1,0 +1,23 @@
+
+[functions.criar-checkout]
+enabled = true
+verify_jwt = false
+import_map = "./functions/criar-checkout/deno.json"
+# Uncomment to specify a custom file path to the entrypoint.
+# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
+entrypoint = "./functions/criar-checkout/index.ts"
+# Specifies static files to be bundled with the function. Supports glob patterns.
+# For example, if you want to serve static HTML pages in your function:
+# static_files = [ "./functions/criar-checkout/*.html" ]
+
+[functions.enviar-suporte]
+enabled = true
+verify_jwt = false
+import_map = "./functions/enviar-suporte/deno.json"
+entrypoint = "./functions/enviar-suporte/index.ts"
+
+[functions.mp-oauth]
+enabled = true
+verify_jwt = false
+import_map = "./functions/mp-oauth/deno.json"
+entrypoint = "./functions/mp-oauth/index.ts"

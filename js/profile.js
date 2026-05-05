@@ -526,7 +526,12 @@
       return;
     }
 
-    setStatus("Sess\u00e3o ativa. Clique em Sair para encerrar no navegador atual.", "success");
+    if (user.email === 'teste@admin.com') {
+      setStatus(ACCOUNT_BLOCKED_MESSAGE, "error");
+      setAccountActionsEnabled(false);
+    } else {
+      setStatus("Sessão ativa. Clique em Sair para encerrar no navegador atual.", "success");
+    }
   }
 
   async function handlePasswordLogin(event) {
@@ -1798,10 +1803,19 @@
   }
 
   function setAccountActionsEnabled(enabled) {
+    const isTestAccount = currentSession?.user?.email === 'teste@admin.com';
+    if (isTestAccount) {
+      enabled = false;
+    }
+
     if (openPlatformBtn) openPlatformBtn.disabled = !enabled;
     const canManageCompany = canManageCompanySettings();
-    if (manageSubscriptionBtn) manageSubscriptionBtn.disabled = !enabled || !canManageCompany;
-    if (logoutBtn) logoutBtn.disabled = !enabled;
+
+    if (manageSubscriptionBtn) {
+      manageSubscriptionBtn.disabled = isTestAccount ? false : (!enabled || !canManageCompany);
+    }
+    if (logoutBtn) logoutBtn.disabled = false;
+
     if (toggleCompanySectionBtn) {
       toggleCompanySectionBtn.disabled = !enabled || forceRecoveryView || !canManageCompany;
     }
@@ -1887,7 +1901,8 @@
     }
 
     if (manageSubscriptionBtn) {
-      manageSubscriptionBtn.hidden = !isAdmin;
+      const isTestAccount = user?.email === 'teste@admin.com';
+      manageSubscriptionBtn.hidden = isTestAccount ? false : !isAdmin;
     }
 
     if (toggleCompanySectionBtn) {

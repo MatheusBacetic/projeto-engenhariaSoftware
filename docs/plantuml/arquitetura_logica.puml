@@ -1,0 +1,48 @@
+@startuml
+title Diagrama de Pacotes da Arquitetura Logica
+
+top to bottom direction
+
+package "Apresentacao" as Apresentacao {
+  component "Landing page" as LandingPage
+  component "Assinatura" as AssinaturaUI
+  component "Login" as LoginUI
+  component "Perfil" as PerfilUI
+}
+
+package "Aplicacao" as Aplicacao {
+  component "Controladores" as Controladores
+  component "Validacoes" as Validacoes
+  component "Regras de assinatura" as RegrasAssinatura
+}
+
+package "Dominio" as Dominio {
+  component "Usuario" as Usuario
+  component "ContaEmpresa" as ContaEmpresa
+  component "Assinatura" as Assinatura
+  component "IntegracaoPagamento" as IntegracaoPagamento
+}
+
+package "Infraestrutura" as Infra {
+  component "Supabase" as Supabase
+  component "Stripe" as Stripe
+  component "Mercado Pago" as MercadoPago
+  component "E-mail" as Email
+}
+
+Apresentacao ..> Aplicacao
+Aplicacao ..> Dominio
+Aplicacao ..> Infra
+
+Controladores ..> Validacoes
+Controladores ..> RegrasAssinatura
+RegrasAssinatura ..> Usuario
+RegrasAssinatura ..> ContaEmpresa
+RegrasAssinatura ..> Assinatura
+RegrasAssinatura ..> IntegracaoPagamento
+RegrasAssinatura ..> Supabase
+RegrasAssinatura ..> Stripe
+RegrasAssinatura ..> MercadoPago
+RegrasAssinatura ..> Email
+
+@enduml
